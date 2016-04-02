@@ -3,9 +3,12 @@
     <form (ngSubmit)="login(loginForm.value)" #loginForm="ngForm">
         <div class="input">
             <label for="email">Email</label>
-            <input type="text" id="email" ngControl="email" required #email="ngForm">
+            <input type="text" id="email" ngControl="email" required #email="ngForm" isEmailIppon>
             <span *ngIf="email.control?.dirty && email.control?.hasError('required')">
                 Email is required
+            </span>
+            <span *ngIf="email.control?.dirty && email.control?.hasError('notEmailIppon')">
+                Email not valid
             </span>
         </div>
         <div class="input">

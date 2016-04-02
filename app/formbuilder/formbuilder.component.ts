@@ -12,7 +12,7 @@ export class FormBuilderComponent {
     password: Control;
     
     constructor(fb: FormBuilder) {
-        this.email = fb.control('', Validators.compose([Validators.required]));
+        this.email = fb.control('', Validators.compose([Validators.required, this.isEmailIppon]));
         this.password = fb.control('', Validators.compose([Validators.required, Validators.minLength(3)]));
         this.loginForm = fb.group({
            email: this.email,
@@ -24,4 +24,12 @@ export class FormBuilderComponent {
         console.log('FormBuilderComponent');
         console.info(this.loginForm.value);
     }
+    
+    isEmailIppon(control: Control) {
+        let emailIppon: string = control.value;
+        return (emailIppon !== null 
+                && emailIppon !== undefined
+                && emailIppon.endsWith('@ippon.fr')) ? null : {notEmailIppon: true};
+    }
+    
 }

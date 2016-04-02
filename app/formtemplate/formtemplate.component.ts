@@ -1,8 +1,10 @@
-import {Component} from 'angular2/core';
+import {Component}             from 'angular2/core';
+import {IsEmailIpponValidator} from '../isEmailIpponValidator/IsEmailIpponValidator.directive';
 
 @Component({
     selector: 'form-template-component',
-    templateUrl: 'app/formtemplate/formtemplate.component.html'
+    templateUrl: 'app/formtemplate/formtemplate.component.html',
+    directives: [IsEmailIpponValidator]
 })
 export class FormTemplateComponent { 
     

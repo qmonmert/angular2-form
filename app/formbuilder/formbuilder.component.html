@@ -7,6 +7,9 @@
             <span *ngIf="email.dirty && email.hasError('required')">
                 Email is required
             </span>
+            <span *ngIf="email.dirty && email.hasError('notEmailIppon')">
+                Email not valid
+            </span>
         </div>
         <div class="input">
             <label for="password">Password</label>
