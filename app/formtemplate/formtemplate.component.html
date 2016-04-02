@@ -1,0 +1,14 @@
+<section class="update">
+    <h3>Login (form template)</h3>
+    <form (ngSubmit)="login(loginForm.value)" #loginForm="ngForm">
+        <div class="input">
+            <label for="email">Email</label>
+            <input type="text" id="email" ngControl="email">
+        </div>
+        <div class="input">
+            <label for="password">Password</label>
+            <input type="password" id="password" ngControl="password">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</section>

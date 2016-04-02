@@ -1,0 +1,14 @@
+<section class="delete">
+    <h3>Login (form binding)</h3>
+    <form (ngSubmit)="login()">
+        <div class="input">
+            <label for="email">Email</label>
+            <input type="text" id="email" [(ngModel)]="user.email">
+        </div>
+        <div class="input">
+            <label for="password">Password</label>
+            <input type="password" id="password" [(ngModel)]="user.password">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</section>
