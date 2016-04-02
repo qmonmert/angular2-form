@@ -1,5 +1,4 @@
 import {Component} from 'angular2/core';
-import {FormBuilder, ControlGroup, Control} from 'angular2/common';
 import {User} from '../user/user';
 
 @Component({

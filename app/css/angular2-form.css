@@ -12,7 +12,7 @@ section {
   background: #bdc3c7;
   padding: 10px;
   margin: 30px;
-  width: 300px;
+  width: 330px;
   box-shadow: 3px 3px 1px #34495e;
   min-height: 400px;
 }
@@ -68,4 +68,18 @@ button {
 
 button:hover {
   background: #bdc3c7;
+}
+
+/***** Validation *****/
+
+input.ng-invalid.ng-dirty {
+    border: 2px solid red;
+}
+
+input.ng-valid.ng-dirty {
+    border: 2px solid green;
+}
+
+input:focus {
+    outline: none;
 }

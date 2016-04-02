@@ -4,11 +4,20 @@
         <div class="input">
             <label for="email">Email</label>
             <input type="text" id="email" ngControl="email">
+            <span *ngIf="email.dirty && email.hasError('required')">
+                Email is required
+            </span>
         </div>
         <div class="input">
             <label for="password">Password</label>
             <input type="password" id="password" ngControl="password">
+            <span *ngIf="password.dirty && password.hasError('required')">
+                Password is required
+            </span>
+            <span *ngIf="password.dirty && password.hasError('minlength')">
+                Password too short
+            </span>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" [disabled]="!loginForm.valid">Submit</button>
     </form>
 </section>
