@@ -11,15 +11,30 @@
                 Email not valid
             </span>
         </div>
-        <div class="input">
-            <label for="password">Password</label>
-            <input type="password" id="password" ngControl="password">
-            <span *ngIf="password.dirty && password.hasError('required')">
-                Password is required
-            </span>
-            <span *ngIf="password.dirty && password.hasError('minlength')">
-                Password too short
-            </span>
+        <div ngControlGroup="passwordForm" #passwordForm="ngForm">
+            <div class="input">
+                <label for="password">Password</label>
+                <input type="password" id="password" ngControl="password">
+                <span *ngIf="password.dirty && password.hasError('required')">
+                    Password is required
+                </span>
+                <span *ngIf="password.dirty && password.hasError('minlength')">
+                    Password too short
+                </span>
+            </div>
+            <div class="input">
+                <label for="confirm">Confirm password</label>
+                <input type="confirm" id="confirm" ngControl="confirm">
+                <span *ngIf="confirm.dirty && confirm.hasError('required')">
+                    Confirm is required
+                </span>
+                <span *ngIf="confirm.dirty && confirm.hasError('minlength')">
+                    Confirm too short
+                </span>
+                <span *ngIf="passwordForm.dirty && passwordForm.control.hasError('matchingError') && !confirm.hasError('minlength')">
+                    Password not match
+                </span>
+            </div>
         </div>
         <button type="submit" [disabled]="!loginForm.valid">Submit</button>
     </form>
